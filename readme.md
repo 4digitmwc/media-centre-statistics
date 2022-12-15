@@ -19,3 +19,5 @@ To run a python file, instead of `python <file.py>` use
 ```
 streamlit run <file.py>
 ```
+
+The result will be shown in your [localhost](http://localhost:8501)
