@@ -11,7 +11,7 @@ def score_distribution():
     beatmap_typetag = st.text_input('Beatmap code (ex. HB2)')
     if beatmap_typetag:
         beatmap_type, beatmap_tag = beatmap_typetag[:2], beatmap_typetag[2:]
-        data = pd.read_sql(f'SELECT score FROM scores WHERE round="{interested_round}" AND beatmap_type="{beatmap_type}" AND beatmap_tag={beatmap_tag}', conn)
+        data = pd.read_sql(f'SELECT score FROM scores WHERE round=:rnd AND beatmap_type=:type AND beatmap_tag=:tag', conn, params={'rnd': interested_round, 'type': beatmap_type, 'tag': beatmap_tag})
         fig, ax = plt.subplots()
         ax.hist(data)
         st.pyplot(fig)
