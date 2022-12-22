@@ -15,15 +15,16 @@ class User:
 
 @dataclass
 class PickBanStatistics:
-    beatmap_id: int
+    beatmap_metadata: int
     ban_rate: float
     pick_rate: float
     beatmap_thumbnail: str
 
 @dataclass
 class ScoreHighlight:
-    user_id: int
-    beatmap_id: int
+    user_name: int
+    beatmap_metadata: int
+    beatmap_thumbnail: str
     score: int
     screenshot_url: str
     score_description: str
