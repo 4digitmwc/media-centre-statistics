@@ -3,10 +3,15 @@ from dataclasses import dataclass
 @dataclass
 class Beatmap:
     beatmap_id: int
+    beatmap_metadata: str
     beatmap_category: str
     beatmap_tag: int
     beatmap_round: str
-    beatmap_metadata: str
+    beatmap_thumbnail: str
+    ban_rate: float
+    pick_rate: float
+    protect_rate: float
+
 
 @dataclass
 class User:
@@ -18,7 +23,6 @@ class PickBanStatistics:
     beatmap_metadata: int
     ban_rate: float
     pick_rate: float
-    beatmap_thumbnail: str
 
 @dataclass
 class ScoreHighlight:
@@ -33,3 +37,5 @@ class ScoreHighlight:
 class ScoreLeaderboard:
     user_id: int
     beatmap_id: int
+    match_id: int
+    score: int
